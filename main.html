@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50. Age Calculator</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 80px; background: linear-gradient(#667eea, #764ba2); color: white; }
+    .box { max-width: 500px; margin: auto; background: rgba(255,255,255,0.2); padding: 50px; border-radius: 20px; backdrop-filter: blur(10px); }
+    input { padding: 15px; font-size: 18px; width: 80%; border-radius: 10px; border: none; }
+    button { padding: 15px 40px; margin-top: 25px; background: white; color: #667eea; border: none; border-radius: 50px; font-size: 18px; cursor: pointer; }
+    #result { font-size: 32px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Yoshingizni hisoblang</h1>
+    <input type="date" id="birthdate">
+    <button onclick="calculateAge()">Hisoblash</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateAge() {
+      const birth = new Date(document.getElementById('birthdate').value);
+      if (!birth.getTime()) return alert("Tug‘ilgan sanani tanlang!");
+
+      const today = new Date();
+      let age = today.getFullYear() - birth.getFullYear();
+      const monthDiff = today.getMonth() - birth.getMonth();
+
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        age--;
+      }
+
+      document.getElementById('result').innerHTML = `
+        Sizning yoshingiz: <strong>${age} yosh</strong><br>
+        <small>${Math.floor(age * 365.25)} kun yashadingiz</small>
+      `;
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50. Age Calculator</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 80px; background: linear-gradient(#667eea, #764ba2); color: white; }
+    .box { max-width: 500px; margin: auto; background: rgba(255,255,255,0.2); padding: 50px; border-radius: 20px; backdrop-filter: blur(10px); }
+    input { padding: 15px; font-size: 18px; width: 80%; border-radius: 10px; border: none; }
+    button { padding: 15px 40px; margin-top: 25px; background: white; color: #667eea; border: none; border-radius: 50px; font-size: 18px; cursor: pointer; }
+    #result { font-size: 32px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Yoshingizni hisoblang</h1>
+    <input type="date" id="birthdate">
+    <button onclick="calculateAge()">Hisoblash</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateAge() {
+      const birth = new Date(document.getElementById('birthdate').value);
+      if (!birth.getTime()) return alert("Tug‘ilgan sanani tanlang!");
+
+      const today = new Date();
+      let age = today.getFullYear() - birth.getFullYear();
+      const monthDiff = today.getMonth() - birth.getMonth();
+
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        age--;
+      }
+
+      document.getElementById('result').innerHTML = `
+        Sizning yoshingiz: <strong>${age} yosh</strong><br>
+        <small>${Math.floor(age * 365.25)} kun yashadingiz</small>
+      `;
+    }
+  </script>
+</body>
+</html>
